@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo VIP - Promoções Figurinhas da Copa 2026</title>
+    <!-- Fonte do Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --verde-campo: #008033;
+            --verde-escuro: #004d1d;
+            --amarelo-brasil: #ffdf00;
+            --azul-brasil: #002776;
+            --branco: #ffffff;
+            --texto-escuro: #1a1a1a;
+            --whatsapp-color: #25D366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f1;
+            color: var(--texto-escuro);
+            line-height: 1.6;
+        }
+
+        /* Hero Section com textura de gramado */
+        .hero {
+            background: radial-gradient(circle, var(--verde-campo) 0%, var(--verde-escuro) 100%);
+            color: var(--branco);
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom: 8px solid var(--amarelo-brasil);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: repeating-linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0.05),
+                rgba(255, 255, 255, 0.05) 50px,
+                transparent 50px,
+                transparent 100px
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .tag-copa {
+            background: var(--azul-brasil);
+            color: var(--amarelo-brasil);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--amarelo-brasil);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            color: var(--branco);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .price-tag {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--branco);
+            margin: 20px 0;
+            display: block;
+            text-shadow: 2px 2px 0px var(--azul-brasil);
+        }
+
+        /* Botão de Compra Dourado */
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--amarelo-brasil);
+            color: var(--azul-brasil);
+            font-size: 1.4rem;
+            font-weight: 900;
+            padding: 20px 40px;
+            text-decoration: none;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            animation: pulse 2s infinite;
+            border: 2px solid #e5c800;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 25px rgba(255, 223, 0, 0.4);
+            background-color: #ffea4d;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Benefícios */
+        .benefits {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: -40px auto 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .card {
+            background: var(--branco);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 5px solid var(--azul-brasil);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: var(--azul-brasil);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        /* Garantia */
+        .guarantee {
+            background: var(--branco);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .guarantee-box {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 3px dashed var(--verde-campo);
+            padding: 40px;
+            border-radius: 15px;
+            background: #f0fdf4;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .guarantee-box h2 {
+            color: var(--verde-escuro);
+            margin-bottom: 15px;
+            font-weight: 900;
+        }
+
+        footer {
+            background: var(--texto-escuro);
+            color: var(--branco);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            border-top: 5px solid var(--amarelo-brasil);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .cta-btn { font-size: 1.1rem; padding: 15px 20px; width: 100%; }
+            .price-tag { font-size: 2.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO TEMÁTICO -->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="tag-copa">⭐ Alertas em Tempo Real ⭐</span>
+            <h1>Entre Para o Grupo VIP e Complete Seu Álbum Gastando Pouco</h1>
+            <p>Receba no seu celular os links secretos e alertas das maiores promoções de pacotinhos de figurinhas antes que esgotem nas lojas!</p>
+            
+            <span class="price-tag">R$ 7,00</span>
+            
+            <!-- INSIRA SEU LINK DE CHECKOUT DA KIWIFY AQUI -->
+            <a href="LINK_DO_CHECKOUT_AQUI" class="cta-btn">
+                📱 Quero Entrar no Grupo VIP
+            </a>
+            
+            <p style="margin-top: 25px; font-size: 0.95rem; font-weight: bold;">Acesso imediato ao grupo após aprovação do pagamento.</p>
+        </div>
+    </header>
+
+    <!-- BENEFÍCIOS TEMÁTICOS PARA O GRUPO -->
+    <section class="benefits">
+        <div class="card">
+            <div class="icon">🔔</div>
+            <h3>Alertas Diários</h3>
+            <p>Apareceu uma promoção relâmpago de madrugada? Você será o primeiro a saber. Enviamos o link direto no grupo para você clicar e comprar com desconto.</p>
+        </div>
+        <div class="card">
+            <div class="icon">💸</div>
+            <h3>O Investimento se Paga</h3>
+            <p>Os R$ 7,00 cobrados para entrar no grupo se pagam facilmente logo na sua primeira compra de pacotinhos aproveitando nossos alertas.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🤫</div>
+            <h3>Comunidade Exclusiva</h3>
+            <p>Chega de ficar garimpando a internet inteira atrás de ofertas ou links falsos. Nossa equipe monitora os melhores preços e manda tudo mastigado para você.</p>
+        </div>
+    </section>
+
+    <!-- GARANTIA -->
+    <section class="guarantee">
+        <div class="guarantee-box">
+            <h2>🏆 Garantia de Campeão (7 Dias)</h2>
+            <p>Se você entrar no grupo e não gostar das promoções enviadas, ou achar que não está economizando na compra das suas figurinhas, você pode pedir 100% dos seus R$ 7,00 de volta. O risco é todo nosso!</p>
+            <br>
+            <a href="LINK_DO_CHECKOUT_AQUI" class="cta-btn" style="font-size: 1.1rem; padding: 15px 30px;">
+                Garantir Minha Vaga (R$ 7)
+            </a>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>🔒 Pagamento 100% processado em ambiente seguro.</p>
+        <p>Este site e o grupo não têm afiliação oficial com a FIFA ou Panini.</p>
+        <p style="margin-top: 20px; opacity: 0.5;">&copy; 2026 - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
